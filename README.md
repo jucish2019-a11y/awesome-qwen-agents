@@ -1,6 +1,6 @@
 # Awesome Qwen Agents
 
-> A curated collection of **19 production-grade AI agents** for building software products end-to-end — from research and design to engineering, launch, growth, and operations.
+> A curated collection of **20 production-grade AI agents** for building software products end-to-end — from research and design to engineering, launch, growth, and operations.
 
 Built for [Qwen Code](https://qwen.ai), but the specifications are universal and can be adapted to any AI coding assistant (Claude Code, Cursor, GitHub Copilot, etc.).
 
@@ -10,7 +10,7 @@ Built for [Qwen Code](https://qwen.ai), but the specifications are universal and
 
 Most AI coding agents are great at writing code but terrible at **deciding what to build, how it should look, whether it's testable, or what happens when it breaks in production**.
 
-These 19 agents fill those gaps. Each one is a detailed specification that turns an AI assistant into a specialized expert — a senior designer who studies Linear and Vercel, a test engineer who knows the modern test pyramid, an SRE who writes runbooks that work at 3am.
+These 20 agents fill those gaps. Each one is a detailed specification that turns an AI assistant into a specialized expert — a senior designer who studies Linear and Vercel, a test engineer who knows the modern test pyramid, an SRE who writes runbooks that work at 3am.
 
 Every agent is built on **2025/2026 best practices** from companies known for doing this well: Linear, Vercel, Stripe, Google SRE, PagerDuty, Amplitude, and the open-source design/testing/motion communities.
 
@@ -84,10 +84,11 @@ For Cursor, Claude Code, or GitHub Copilot:
 | [**Performance Optimization Engineer**](agents/performance-optimization-engineer.md) | Load testing, bundle size optimization, caching, Core Web Vitals | Before launch, or when app feels slow |
 | [**Platform Migration Specialist**](agents/platform-migration.md) | Mobile (React Native/PWA), Desktop (Tauri/Electron), offline-first, app stores | Going mobile or desktop from a web app |
 
-### 🧪 Quality & Operations (3 agents)
+### 🧪 Quality & Operations (4 agents)
 
 | Agent | What It Does | When to Use |
 |-------|-------------|-------------|
+| [**Pre-Push Commit Auditor**](agents/pre-push-auditor.md) | Conventional commits, secret scanning, security, branch hygiene before push | Before every `git push`, before opening a PR |
 | [**Testing Strategy**](agents/testing-strategy.md) | Test pyramid selection, unit/integration/E2E strategy, flaky test prevention, CI gates | Setting up testing for the first time |
 | [**Monitoring/Observability Engineer**](agents/monitoring-observability-engineer.md) | Logging infrastructure, alerting, APM, error tracking, SLOs, incident detection | Before launching to production |
 | [**Incident Response & Runbook**](agents/incident-response.md) | Severity classification, escalation procedures, runbooks, post-mortems, disaster recovery | After first production incident (or before) |
@@ -122,19 +123,20 @@ PHASE 2: BUILD
  10. backend-api-developer        → API implementation, auth, middleware
  11. frontend-specialist          → Frontend implementation (built-in Qwen agent)
  12. zero-defect-engineer         → Production-hardened business logic (built-in Qwen agent)
- 13. testing-strategy             → Test suite for all layers
- 14. devops-infrastructure        → CI/CD, Docker, deployment pipeline
+ 13. pre-push-auditor             → Audit commits, scan for secrets, verify conventions
+ 14. testing-strategy             → Test suite for all layers
+ 15. devops-infrastructure        → CI/CD, Docker, deployment pipeline
 
 PHASE 3: LAUNCH & GROW
- 15. performance-optimization     → Load testing, bundle optimization, Core Web Vitals
- 16. data-analytics               → Event tracking, dashboards, funnels
- 17. growth-launch-strategist     → Activation, viral loops, pricing, launch plan
- 18. technical-documentation      → README, API docs, deployment guides
+ 16. performance-optimization     → Load testing, bundle optimization, Core Web Vitals
+ 17. data-analytics               → Event tracking, dashboards, funnels
+ 18. growth-launch-strategist     → Activation, viral loops, pricing, launch plan
+ 19. technical-documentation      → README, API docs, deployment guides
 
 PHASE 4: OPERATE
- 19. monitoring-observability     → Logging, alerting, error tracking, SLOs
- 20. incident-response            → Runbooks, severity matrix, post-mortems
- 21. platform-migration           → Mobile (PWA/RN), Desktop (Tauri/Electron)
+ 20. monitoring-observability     → Logging, alerting, error tracking, SLOs
+ 21. incident-response            → Runbooks, severity matrix, post-mortems
+ 22. platform-migration           → Mobile (PWA/RN), Desktop (Tauri/Electron)
 ```
 
 ---
@@ -197,6 +199,7 @@ The engineering agents follow 2025/2026 best practices:
 - **`database-api-architect`**: Schema-first design, proper indexing strategy, ORM selection guidance, migration safety
 - **`testing-strategy`**: Modern test trophy (integration-first), Playwright E2E with `data-testid`, MSW for mocking, mutation testing validation
 - **`devops-infrastructure-engineer`**: Multi-stage Docker builds, GitHub Actions with proper gating, blue-green deployments, secret management
+- **`pre-push-auditor`**: Conventional commits enforcement, secret/credential scanning, sensitive file detection, code quality checks, commit atomicity, branch compliance, dependency security, .gitignore completeness, license/legal checks, documentation sync
 
 ### Operations Agents
 
@@ -238,7 +241,7 @@ These agents ensure the product actually reaches and retains users:
 awesome-qwen-agents/
 ├── README.md                          # This file
 ├── LICENSE                            # MIT License
-├── agents/                            # All 19 agent specifications
+├── agents/                            # All 20 agent specifications
 │   ├── design-system-architect.md
 │   ├── component-style-spec.md
 │   ├── motion-design.md
@@ -252,6 +255,7 @@ awesome-qwen-agents/
 │   ├── devops-infrastructure-engineer.md
 │   ├── performance-optimization-engineer.md
 │   ├── platform-migration.md
+│   ├── pre-push-auditor.md
 │   ├── testing-strategy.md
 │   ├── monitoring-observability-engineer.md
 │   ├── incident-response.md
@@ -306,6 +310,10 @@ Contributions are welcome! If you have an agent specification that fills a gap n
 ---
 
 ## Changelog
+
+### v1.1.0 — April 2026
+- Added `pre-push-auditor` agent for commit quality and security auditing (20 agents total)
+- 4 Quality & Operations agents (was 3)
 
 ### v1.0.0 — April 2026
 - Initial release with 19 agents
